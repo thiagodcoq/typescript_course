@@ -7,5 +7,15 @@ function GetReview(title: string): string | number {
     }
 }
 
+function PrintMovieInfo(title: string, yearReleased: number, ...cast: string[]){
 
+    console.log(`Title: ${title}`);
+    console.log(`Year Released: ${yearReleased}`);
+    console.log('Cast:');
+    for(const name of cast){
+        console.log(` ${name}`);
+    }
+} 
+
+PrintMovieInfo('A New Hope',1977,'Carrie','Mark','Harrison');
 

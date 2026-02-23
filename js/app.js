@@ -8,13 +8,13 @@ function GetReview(title) {
         return Math.floor(Math.random() * 10);
     }
 }
-const movieTitle = 'A New Hop';
-let movieReview = GetReview(movieTitle);
-console.log(`Movie title: ${movieTitle}`);
-if (typeof (movieReview) == 'string') {
-    console.log(`Review: ${movieReview}`);
+function PrintMovieInfo(title, yearReleased, ...cast) {
+    console.log(`Title: ${title}`);
+    console.log(`Year Released: ${yearReleased}`);
+    console.log('Cast:');
+    for (const name of cast) {
+        console.log(` ${name}`);
+    }
 }
-else {
-    console.log(`Rating: ${movieReview}/10`);
-}
+PrintMovieInfo('A New Hope', 1977, 'Carrie', 'Mark', 'Harrison');
 //# sourceMappingURL=app.js.map
