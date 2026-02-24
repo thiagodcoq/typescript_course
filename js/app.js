@@ -16,5 +16,17 @@ function PrintMovieInfo(title, yearReleased, ...cast) {
         console.log(` ${name}`);
     }
 }
-PrintMovieInfo('A New Hope', 1977, 'Carrie', 'Mark', 'Harrison');
+//Arrow function
+// let adder = (a:number,b:number):number =>a+b;
+// let sum = adder(2,3); //5
+// let scores: number[] = [70,125,85,110];
+// let highScores: number[];
+// highScores = scores.filter((element,indexe,array)=>{
+//     if (element>100){
+//         return true
+//     }
+// });
+const LogMessage = (message) => console.log(message);
+LogMessage('Enjoy the movie!');
+//PrintMovieInfo('A New Hope',1977,'Carrie','Mark','Harrison');
 //# sourceMappingURL=app.js.map
