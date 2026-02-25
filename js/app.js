@@ -8,13 +8,10 @@ function GetReview(title) {
         return Math.floor(Math.random() * 10);
     }
 }
-function PrintMovieInfo(title, yearReleased, ...cast) {
-    console.log(`Title: ${title}`);
-    console.log(`Year Released: ${yearReleased}`);
-    console.log('Cast:');
-    for (const name of cast) {
-        console.log(` ${name}`);
-    }
+function PrintMovieInfo(movie) {
+    console.log(`Title: ${movie.title}`);
+    console.log(`Year Released: ${movie.yearReleased}`);
+    console.log(`Director: ${movie.director}`);
 }
 //Arrow function
 // let adder = (a:number,b:number):number =>a+b;
@@ -26,7 +23,21 @@ function PrintMovieInfo(title, yearReleased, ...cast) {
 //         return true
 //     }
 // });
-const LogMessage = (message) => console.log(message);
-LogMessage('Enjoy the movie!');
-//PrintMovieInfo('A New Hope',1977,'Carrie','Mark','Harrison');
+// const LogMessage = (message: string) => console.log(message);
+// LogMessage('Enjoy the movie!');
+let myMovie = {
+    title: 'Rogue One',
+    director: 'Gareth Edwards',
+    yearReleased: 2016,
+    streaming: true,
+    lenght: 133,
+    logReview: (review) => console.log(`Review: ${review}`)
+};
+//  PrintMovieInfo(myMovie);
+//  if(myMovie.logReview){
+//     myMovie.logReview('A masterpiece');
+// }
+let printReview;
+printReview = (review) => console.log(`Viewer review: ${review}`);
+printReview('I want to see it again');
 //# sourceMappingURL=app.js.map

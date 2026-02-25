@@ -1,3 +1,16 @@
+interface Movie{
+    title:string,
+    director:string,
+    yearReleased:number,
+    streaming:boolean,
+    lenght?:number,
+    logReview?:ReviewLogger
+}
+
+interface ReviewLogger{
+    (review:string):void;
+}
+
 function GetReview(title: string): string | number {
     if (title == 'A New Hope'){
         return 'An instant classic!';
@@ -7,14 +20,11 @@ function GetReview(title: string): string | number {
     }
 }
 
-function PrintMovieInfo(title: string, yearReleased: number, ...cast: string[]){
+function PrintMovieInfo(movie:Movie){
 
-    console.log(`Title: ${title}`);
-    console.log(`Year Released: ${yearReleased}`);
-    console.log('Cast:');
-    for(const name of cast){
-        console.log(` ${name}`);
-    }
+    console.log(`Title: ${movie.title}`);
+    console.log(`Year Released: ${movie.yearReleased}`);
+    console.log(`Director: ${movie.director}`);
 } 
 
 //Arrow function
@@ -31,5 +41,23 @@ function PrintMovieInfo(title: string, yearReleased: number, ...cast: string[]){
 // const LogMessage = (message: string) => console.log(message);
 // LogMessage('Enjoy the movie!');
 
-//PrintMovieInfo('A New Hope',1977,'Carrie','Mark','Harrison');
- 
+
+ let myMovie:Movie={
+    title:'Rogue One',
+    director: 'Gareth Edwards',
+    yearReleased: 2016,
+    streaming: true,
+    lenght:133,
+    logReview:(review:string)=> console.log(`Review: ${review}`)
+ };
+
+//  PrintMovieInfo(myMovie);
+
+//  if(myMovie.logReview){
+//     myMovie.logReview('A masterpiece');
+// }
+
+
+let printReview: ReviewLogger;
+printReview=(review:string)=>console.log(`Viewer review: ${review}`);
+printReview('I want to see it again');
